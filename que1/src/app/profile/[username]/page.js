@@ -1,23 +1,23 @@
 'use client';
-import { Box, Avatar, Typography, Paper, Grid, Tabs, Tab, Container } from '@mui/material';
-import { useState } from 'react';
+import { Box, Avatar, Typography, Paper } from '@mui/material';
 
 export default function ProfilePage({ params }) {
-  const [tabValue, setTabValue] = useState(0);
   const { username } = params;
 
   return (
-    <Container>
-      <Paper sx={{ p: 3, mt: 3 }}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={3} textAlign="center">
-            <Avatar
-              sx={{ width: 150, height: 150, mx: 'auto', mb: 2 }}
-              src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${username}`}
-            />
-            <Typography variant="h5" gutterBottom>
-              {username}
-            </Typography>
+    <Box sx={{ p: 2 }}>
+      <Paper sx={{ p: 2 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Avatar
+            sx={{ width: 100, height: 100 }}
+            src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${username}`}
+          />
+          <Typography variant="h4">{username}'s Profile</Typography>
+        </Box>
+      </Paper>
+    </Box>
+  );
+}
           </Grid>
           <Grid item xs={12} md={9}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 2 }}>
